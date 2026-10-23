@@ -6,7 +6,7 @@ An unofficial Bubu companion for the Codex desktop app, with a crossbody camera 
 
 包含 9 组动作、16 个注视方向，透明 WebP 动作图集。此项目为非官方同人宠物，与黄小B、角色权利人及 OpenAI 无隶属或合作关系。
 
-安装脚本、预览代码和原创说明文档采用 MIT 许可。
+代码采用 MIT 许可；角色与美术素材的许可范围见[美术素材权利说明](https://github.com/a1401022353-prog/codex-bubu-pet/blob/main/ASSET-NOTICE.md)。
 
 ## Windows 安装（推荐）
 
@@ -77,5 +77,3 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\make-install-link.ps1 
 - [原作者与参考来源](CREDITS.md)
 - [Codex 官方宠物说明](https://learn.chatgpt.com/docs/pets)
 - [官方安装协议参数](https://learn.chatgpt.com/docs/reference/commands#pets)
-
-
