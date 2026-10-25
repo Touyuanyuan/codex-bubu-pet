@@ -22,6 +22,18 @@ An unofficial Bubu companion for the Codex desktop app, with a crossbody camera 
 
 重复安装同一版本会提示已经安装。若同名目录已有不同文件，脚本会停止并保留现有内容，避免覆盖你的修改。需要换版本时，先把旧的 `bubu-camera` 文件夹移出 `pets` 目录留作备份，再安装。
 
+## macOS 安装（候选版）
+
+Mac 安装包复用 v1.0.0 的动画素材，无需重新制作布布。
+
+1. 下载并解压 `codex-bubu-pet-v1.0.0-macos-preview.zip`。
+2. 打开解压后的文件夹，双击 **`install.command`**，等待「相机布布安装完成」。
+3. 回到 Codex：**设置 → Mini 与虚拟宠物（或 Pets）→ 小刷新图标 ↻ → 相机布布**。
+
+不需要管理员权限、Python、Node.js 或 Homebrew。默认安装到 `~/.codex/pets/bubu-camera`，支持 `CODEX_HOME`。双击受系统限制时，可在终端输入 `/bin/bash ` 后拖入 `install.command` 再回车，或按文档手动复制。
+
+完整步骤见 [Mac 安装说明](docs/INSTALL-MACOS.md)。候选包仍需 Mac 用户确认客户端内的实际显示；当前不将其标为已完成 Mac 桌面实机验证。
+
 ## 预览
 
 双击 [preview.html](preview.html)，可离线查看所有动作、注视方向和深浅背景。
@@ -55,7 +67,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\make-install-link.ps1 
   spritesheet.webp
 ```
 
-再在设置中刷新并选中。Windows 安装脚本支持 `-CodexHome "D:\你的 Codex 目录"` 指定目录。macOS 可按相同目录结构手动安装，尚未实机测试；此包不用于 ChatGPT 网页端上传。
+再在设置中刷新并选中。Windows 安装脚本支持 `-CodexHome "D:\你的 Codex 目录"` 指定目录；Mac 可用 `bash install.sh "你的 Codex 目录"`。此包不用于 ChatGPT 网页端上传。
 
 ## 卸载
 
@@ -69,6 +81,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\make-install-link.ps1 
 - 原画参考仅保留链接和署名，不将原作者下载图片打包。宠物图集为参考角色形象后以 AI 辅助生成、整理的同人素材。
 
 开发者可运行 `tests/test-install.ps1` 检查安装行为，用 Python 3.9+ 运行 `python tools/build-release.py` 构建发行包与校验文件。构建程序只打包固定清单，不包含本地会话、账户信息或研究文件。
+
+Mac 包使用 `python3 tools/build-macos-release.py` 单独构建。Mac 安装行为测试为 `python3 -m unittest discover -s tests -p 'test_*macos.py' -v`，并配置了 macOS GitHub Actions。打包时保留脚本执行权限与 LF 换行；Windows 发行包与脚本保持不变。
 
 ## 许可与来源
 
